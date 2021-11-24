@@ -5,7 +5,15 @@ export const QUERY_USERS = gql`
     users {
       _id
       username
-      savedBooks
+      savedBooks {
+        _id
+        bookId
+        authors
+        description
+        title
+        image
+        link
+      }
     }
   }
 `;
@@ -15,17 +23,33 @@ export const QUERY_SINGLE_USER = gql`
     user(userId: $userId) {
       _id
       username
-      savedBooks
+      savedBooks {
+        _id
+        bookId
+        authors
+        description
+        title
+        image
+        link
+      }
     }
   }
 `;
 
-export const QUERY_ME = gql`
+export const GET_ME = gql`
   query me {
     me {
       _id
       username
-      savedBooks
+      savedBooks {
+        _id
+        bookId
+        authors
+        description
+        title
+        image
+        link
+      }
     }
   }
 `;
